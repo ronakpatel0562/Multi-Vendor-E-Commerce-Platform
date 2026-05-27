@@ -1,0 +1,710 @@
+GitHub Copilot: # Remote Job Readiness Plan — Mid-Level Developer (4.5 YOE)
+
+## Must-Have Technical Skills
+
+| Category | Skills to Focus On |
+|---|---|
+| **Frontend** | React/Next.js, TypeScript, Tailwind CSS |
+| **Backend** | Node.js/Express or Python/FastAPI, REST & GraphQL APIs |
+| **Database** | PostgreSQL, MongoDB, Redis |
+| **DevOps/Cloud** | Docker, CI/CD (GitHub Actions), AWS basics (S3, EC2, Lambda) |
+| **Testing** | Unit (Jest/Vitest), Integration, E2E (Playwright/Cypress) |
+| **Version Control** | Git (rebasing, cherry-pick, conflict resolution) |
+
+## Must-Have Soft / Remote-Specific Skills
+
+- **Async communication** — clear written updates, RFC docs, Loom videos
+- **Self-management** — time-boxing, task estimation, working across time zones
+- **Documentation** — writing technical docs, ADRs, PR descriptions
+- **Proactive communication** — over-communicate progress & blockers
+
+## 90-Day Sharpening Plan
+
+### Month 1 — Foundation
+- Pick **one stack** (e.g., Next.js + Node + PostgreSQL) and build a full-stack project
+- Write tests for everything — aim for 80%+ coverage
+- Dockerize the project and set up CI/CD with GitHub Actions
+- Practice writing detailed PR descriptions
+
+### Month 2 — Depth + System Design
+- Learn system design basics (caching, load balancing, message queues)
+- Add Redis caching & a background job queue to your project
+- Deploy to AWS/Vercel and set up monitoring
+- Study **1 DSA problem/day** on LeetCode (medium level)
+
+### Month 3 — Interview Prep + Visibility
+- Mock interviews (Pramp, interviewing.io)
+- Contribute to 2-3 open source projects (shows async collaboration)
+- Polish GitHub profile, LinkedIn, and resume
+- Apply to **remote-first** companies via: Arc.dev, Turing, Toptal, We Work Remotely, RemoteOK, LinkedIn (remote filter)
+
+## Bonus High-Demand Skills (Stand Out)
+
+- **AI/LLM integration** — OpenAI API, RAG pipelines, LangChain
+- **Monorepo tooling** — Turborepo/Nx
+- **Observability** — logging, tracing (OpenTelemetry basics)
+
+## Key Platforms for Remote Jobs
+
+| Platform | Notes |
+|---|---|
+| **Arc.dev** | Vetted remote dev jobs |
+| **Turing.com** | US remote jobs for global devs |
+| **We Work Remotely** | Curated remote listings |
+| **LinkedIn** | Use "Remote" location filter |
+| **Toptal** | Higher bar, higher pay |
+| **AngelList/Wellfound** | Startups, equity + remote |
+
+> **Key takeaway:** At 4.5 years, companies expect you to **own features end-to-end**, write production-quality code with tests, and communicate clearly in writing. Focus your prep on demonstrating exactly that.
+
+ronak-jesadiya_analytix: Give me list of 3 projects which i can make and attach in my resume which can attract the interviewer
+
+GitHub Copilot: # 3 Resume-Worthy Projects That Impress Interviewers
+
+---
+
+## Project 1: 🤖 AI-Powered Document Q&A App
+
+**Why it attracts:** Shows you work with cutting-edge AI tech — huge demand right now.
+
+### Tech Stack
+`Next.js` `TypeScript` `Python/FastAPI` `PostgreSQL` `pgvector` `OpenAI API` `AWS S3` `Docker`
+
+### Features
+- Upload PDFs/docs → parse & chunk text → generate embeddings → store in pgvector
+- Chat interface to ask questions about uploaded documents (RAG pipeline)
+- Auth with NextAuth, role-based access (admin/user)
+- Rate limiting & token usage tracking per user
+- Deployed on Vercel + Railway/AWS with CI/CD
+
+### What it demonstrates
+- AI/LLM integration (RAG, embeddings, vector search)
+- File processing & storage
+- Full-stack ownership, API design, background jobs
+
+---
+
+## Project 2: 📊 Real-Time Collaborative Project Tracker (Trello/Linear Clone)
+
+**Why it attracts:** Shows real-time systems, complex state, and product thinking.
+
+### Tech Stack
+`Next.js` `TypeScript` `Node.js/Express` `WebSockets (Socket.io)` `PostgreSQL` `Redis` `Docker` `GitHub Actions`
+
+### Features
+- Drag-and-drop Kanban board with real-time sync across users
+- Workspaces → Projects → Tasks with assignees, labels, due dates
+- Real-time presence (see who's online/viewing)
+- Activity log & notification system (in-app + email via Resend)
+- Optimistic UI updates with conflict resolution
+- Full test suite (unit + E2E with Playwright)
+
+### What it demonstrates
+- WebSocket architecture & real-time data handling
+- Complex relational data modeling
+- Caching strategy with Redis
+- Production-grade testing & CI/CD
+
+---
+
+## Project 3: 🛒 Multi-Vendor E-Commerce Platform with Payment & Analytics
+
+**Why it attracts:** Solves a real business problem — interviewers instantly understand the complexity.
+
+### Tech Stack
+`Next.js` `TypeScript` `Node.js` `PostgreSQL` `Stripe API` `Redis` `Docker` `AWS S3` `Chart.js/Recharts`
+
+### Features
+- **Buyer side:** Product search with filters, cart, checkout via Stripe, order tracking
+- **Seller side:** Dashboard to manage products, inventory, view sales analytics
+- **Admin side:** Approve/reject sellers, platform-wide analytics
+- Webhook handling for payment events (Stripe webhooks)
+- Image upload with optimization (Sharp + S3)
+- Background jobs for email notifications (BullMQ + Redis)
+- API rate limiting & request validation (Zod)
+
+### What it demonstrates
+- Payment integration & webhook handling
+- Multi-tenant architecture (buyer/seller/admin roles)
+- Background job processing
+- Data visualization & analytics dashboards
+
+---
+
+## How to Present These on Your Resume
+
+```
+📌 AI Document Q&A App
+   Built a RAG-based document Q&A system using Next.js, FastAPI, 
+   and pgvector. Supports PDF upload, embedding generation, and 
+   conversational search across documents.
+   🔗 Live Demo | GitHub
+```
+
+> **Tips:**
+> - **Deploy every project** — a live link beats a GitHub repo
+> - Add a **detailed README** with architecture diagram, screenshots, and setup instructions
+> - Write **tests** — interviewers check this first
+> - Keep **clean commit history** — shows professional workflow
+> - Pick **2 out of 3** projects max — quality over quantity
+
+ronak-jesadiya_analytix: I want to build 3rd project first
+Give me list of prompt which i can use to build the whole project from start to end
+i am going give those promts to maybe your younger brother sonnet, so make it little simple and give me all start to end prompt so that i can create whole project without writing single line of code
+
+GitHub Copilot: # 🛒 Complete Prompt List — Multi-Vendor E-Commerce Platform
+
+> Copy-paste these prompts **one by one in order** to Claude Sonnet. Wait for each response, apply the code, test it, then move to the next prompt.
+
+---
+
+## Phase 1: Project Setup
+
+### Prompt 1 — Initialize Project
+```
+Create a new Next.js 14 project with TypeScript, Tailwind CSS, and App Router.
+Set up the folder structure for a multi-vendor e-commerce platform with these folders:
+- src/app (pages)
+- src/components (reusable UI components)
+- src/lib (utility functions, db connection, helpers)
+- src/types (TypeScript types/interfaces)
+- src/hooks (custom React hooks)
+- src/services (API service functions)
+
+Install these dependencies: prisma, @prisma/client, next-auth, bcryptjs, zod, axios, react-hot-toast, lucide-react
+
+Give me the commands to run and the updated folder structure.
+```
+
+### Prompt 2 — Database Schema
+```
+Create a Prisma schema file for a multi-vendor e-commerce platform with PostgreSQL.
+
+I need these models with proper relations:
+1. User — id, name, email, password, role (BUYER, SELLER, ADMIN), avatar, createdAt
+2. Store — id, name, description, logo, isApproved, userId (seller), createdAt
+3. Category — id, name, slug, image
+4. Product — id, name, description, price, comparePrice, images (string array), stock, isActive, storeId, categoryId, createdAt
+5. Order — id, orderNumber, status (PENDING, PROCESSING, SHIPPED, DELIVERED, CANCELLED), totalAmount, userId (buyer), createdAt
+6. OrderItem — id, quantity, price, productId, orderId, storeId
+7. Review — id, rating, comment, userId, productId, createdAt
+8. CartItem — id, quantity, userId, productId
+9. Address — id, street, city, state, zipCode, country, isDefault, userId
+
+Add proper indexes, relations, and enums. Also give me the command to run the migration.
+```
+
+### Prompt 3 — Database Connection
+```
+Create a Prisma client singleton file at src/lib/prisma.ts that works with Next.js hot reload in development. Also create a seed file (prisma/seed.ts) that adds:
+- 1 admin user (email: admin@test.com, password: password123)
+- 3 categories (Electronics, Clothing, Home & Garden)
+
+Use bcryptjs to hash passwords. Give me the seed script config for package.json too.
+```
+
+---
+
+## Phase 2: Authentication
+
+### Prompt 4 — NextAuth Setup
+```
+Set up NextAuth.js in my Next.js 14 App Router project with credentials provider.
+- Create the auth config at src/lib/auth.ts
+- Create the API route at src/app/api/auth/[...nextauth]/route.ts
+- Users should login with email and password
+- Use Prisma to find user and bcryptjs to compare password
+- Include user id, name, email, and role in the session and JWT token
+- Create a next-auth.d.ts file to extend the session type with role and id
+- Add the AUTH_SECRET, NEXTAUTH_URL to .env.example
+```
+
+### Prompt 5 — Auth Pages
+```
+Create beautiful auth pages for my Next.js e-commerce project using Tailwind CSS:
+
+1. src/app/(auth)/login/page.tsx — Login form with email and password, link to register, show toast on error, redirect based on role (ADMIN→/admin, SELLER→/seller, BUYER→/)
+2. src/app/(auth)/register/page.tsx — Register form with name, email, password, confirm password, role selection (BUYER or SELLER), link to login
+3. src/app/api/auth/register/route.ts — API route to handle registration, validate with Zod, hash password, create user in DB
+
+Use react-hot-toast for notifications. Make the UI clean and modern with a centered card layout.
+```
+
+### Prompt 6 — Auth Middleware & Session Provider
+```
+For my Next.js 14 e-commerce project:
+
+1. Create a SessionProvider wrapper component at src/components/providers/session-provider.tsx
+2. Wrap the root layout with SessionProvider and Toaster from react-hot-toast
+3. Create middleware.ts at the root that:
+   - Protects /admin routes — only ADMIN role can access
+   - Protects /seller routes — only SELLER role can access
+   - Protects /checkout, /orders routes — only logged in users
+   - Redirects unauthenticated users to /login
+4. Create a useCurrentUser custom hook that returns the session user
+```
+
+---
+
+## Phase 3: Layouts & Navigation
+
+### Prompt 7 — Public Layout & Navbar
+```
+Create the public-facing layout and navbar for my e-commerce Next.js project:
+
+1. src/components/navbar/main-navbar.tsx — Responsive navbar with:
+   - Logo on the left
+   - Search bar in the center
+   - Cart icon with item count badge, user menu (login/register or profile dropdown with logout) on the right
+   - Category links below the main nav
+   - Mobile hamburger menu
+2. src/components/footer.tsx — Simple footer with links and copyright
+3. src/app/(store)/layout.tsx — Layout that wraps public pages with navbar and footer
+
+Use Tailwind CSS, lucide-react icons. Make it look professional like a real e-commerce site.
+```
+
+### Prompt 8 — Seller Dashboard Layout
+```
+Create a seller dashboard layout for my Next.js e-commerce project:
+
+1. src/app/(dashboard)/seller/layout.tsx — Dashboard layout with sidebar and top bar
+2. src/components/dashboard/seller-sidebar.tsx — Sidebar with links:
+   - Dashboard (overview)
+   - Products (manage products)
+   - Orders (view orders)
+   - Store Settings
+   - Icon for each link using lucide-react
+3. src/components/dashboard/dashboard-topbar.tsx — Top bar with seller name, notification bell, and logout button
+4. Make sidebar collapsible on mobile
+
+Use a clean dark sidebar with white content area design.
+```
+
+### Prompt 9 — Admin Dashboard Layout
+```
+Create an admin dashboard layout for my Next.js e-commerce project:
+
+1. src/app/(dashboard)/admin/layout.tsx — Admin layout with sidebar and top bar
+2. src/components/dashboard/admin-sidebar.tsx — Sidebar with links:
+   - Dashboard (overview/analytics)
+   - Sellers (manage sellers, approve/reject)
+   - Products (view all products)
+   - Orders (all orders)
+   - Categories (manage categories)
+   - Users (manage users)
+3. Reuse the dashboard-topbar component from seller layout
+4. Same collapsible sidebar design as seller layout but with a different accent color (e.g., indigo instead of blue)
+```
+
+---
+
+## Phase 4: Seller Features
+
+### Prompt 10 — Store Setup for Seller
+```
+Create a store setup flow for sellers in my Next.js e-commerce project:
+
+1. src/app/(dashboard)/seller/store/page.tsx — Store settings page where seller can:
+   - Create their store if they don't have one (store name, description, logo upload)
+   - Edit store details if store exists
+   - Show store approval status (pending/approved/rejected)
+2. src/app/api/stores/route.ts — POST API to create store (link to logged-in seller)
+3. src/app/api/stores/[storeId]/route.ts — PATCH API to update store
+4. For logo upload, just use a URL input field for now (we will add S3 later)
+5. Validate all inputs with Zod
+
+Show a banner at top of seller dashboard if store is not yet approved: "Your store is pending approval from admin."
+```
+
+### Prompt 11 — Product Management (CRUD)
+```
+Create full product management for sellers in my Next.js e-commerce project:
+
+1. src/app/(dashboard)/seller/products/page.tsx — Products list page with:
+   - Table showing product name, image, price, stock, status, actions
+   - Search and filter by category
+   - Delete button with confirmation modal
+   - "Add Product" button
+2. src/app/(dashboard)/seller/products/new/page.tsx — Add product form:
+   - Name, description (textarea), price, compare price, stock, category (dropdown), images (URL inputs, allow multiple), isActive toggle
+3. src/app/(dashboard)/seller/products/[productId]/edit/page.tsx — Edit product form (pre-filled)
+4. API routes:
+   - GET/POST src/app/api/stores/[storeId]/products/route.ts
+   - GET/PATCH/DELETE src/app/api/stores/[storeId]/products/[productId]/route.ts
+5. Only allow sellers to manage their own store's products
+6. Validate with Zod
+```
+
+### Prompt 12 — Seller Orders Page
+```
+Create a seller orders management page for my Next.js e-commerce project:
+
+1. src/app/(dashboard)/seller/orders/page.tsx — Orders list:
+   - Table with order number, customer name, items count, total, status, date
+   - Filter by status (All, Pending, Processing, Shipped, Delivered, Cancelled)
+   - Click on order to see details
+2. src/app/(dashboard)/seller/orders/[orderId]/page.tsx — Order detail:
+   - Customer info, shipping address
+   - List of items (only items from this seller's store)
+   - Status update dropdown (seller can change: PENDING→PROCESSING→SHIPPED→DELIVERED)
+3. API routes:
+   - GET src/app/api/stores/[storeId]/orders/route.ts (only orders containing items from this store)
+   - PATCH src/app/api/stores/[storeId]/orders/[orderId]/route.ts (update status)
+```
+
+### Prompt 13 — Seller Dashboard Overview
+```
+Create a seller dashboard overview page at src/app/(dashboard)/seller/page.tsx for my Next.js e-commerce project:
+
+1. Stats cards at top:
+   - Total Revenue
+   - Total Orders
+   - Total Products
+   - Pending Orders
+2. Recent orders table (last 5 orders)
+3. Simple bar chart showing revenue of last 7 days (use recharts library — install it)
+4. Create API route: GET src/app/api/stores/[storeId]/analytics/route.ts that returns all the stats data
+5. Make sure to only count data belonging to the logged-in seller's store
+```
+
+---
+
+## Phase 5: Public Store / Buyer Pages
+
+### Prompt 14 — Homepage
+```
+Create the homepage for my Next.js e-commerce project at src/app/(store)/page.tsx:
+
+1. Hero banner section with a catchy headline, subtitle, and "Shop Now" button
+2. Categories section — show all categories as cards with image and name, link to /category/[slug]
+3. Featured products section — show latest 8 products in a grid
+4. Create a reusable product card component at src/components/product-card.tsx:
+   - Product image, name, price, compare price (with strikethrough), store name
+   - "Add to Cart" button
+   - Link to /product/[productId]
+5. API route: GET src/app/api/products/route.ts — get products with pagination, optional filters (categoryId, search, minPrice, maxPrice, sortBy)
+
+Make it visually appealing with proper spacing, hover effects on cards.
+```
+
+### Prompt 15 — Product Detail Page
+```
+Create a product detail page at src/app/(store)/product/[productId]/page.tsx for my Next.js e-commerce project:
+
+1. Product image gallery (show main image + thumbnails, click to switch)
+2. Product info: name, price, compare price, description, stock status, store name (link to store)
+3. Quantity selector (+/- buttons) and "Add to Cart" button
+4. Reviews section below:
+   - Average rating with stars
+   - List of reviews (user name, rating stars, comment, date)
+   - Add review form (only for logged-in buyers who are not the seller)
+5. Related products section (same category, max 4)
+6. API routes:
+   - GET src/app/api/products/[productId]/route.ts
+   - GET/POST src/app/api/products/[productId]/reviews/route.ts
+```
+
+### Prompt 16 — Category Page
+```
+Create a category page at src/app/(store)/category/[slug]/page.tsx for my Next.js e-commerce project:
+
+1. Category header with name and product count
+2. Sidebar filters:
+   - Price range (min-max inputs)
+   - Rating filter (4+, 3+, etc.)
+   - Sort by: Newest, Price Low-High, Price High-Low, Most Popular
+3. Product grid using the reusable product-card component
+4. Pagination at the bottom (Previous/Next with page numbers)
+5. "No products found" state with illustration
+6. Make it responsive — filters go to top on mobile as a collapsible section
+7. Use URL search params for filters so they are shareable
+```
+
+### Prompt 17 — Search Page
+```
+Create a search results page at src/app/(store)/search/page.tsx for my Next.js e-commerce project:
+
+1. Show search query at top: 'Showing results for "query"'
+2. Reuse the same filter sidebar from category page (price, rating, sort)
+3. Product grid with product-card components
+4. Pagination
+5. "No results found" state with suggestion to try different keywords
+6. Update the navbar search bar to redirect to /search?q=query on submit
+7. The existing GET /api/products route should already support search query — make sure it does
+```
+
+---
+
+## Phase 6: Cart & Checkout
+
+### Prompt 18 — Cart Functionality
+```
+Create cart functionality for my Next.js e-commerce project:
+
+1. src/hooks/use-cart.ts — Cart using zustand (install it) with persist middleware:
+   - For logged-in users: sync with database (CartItem model)
+   - For guests: store in localStorage
+   - Functions: addToCart, removeFromCart, updateQuantity, clearCart, getCartTotal, getCartCount
+2. API routes:
+   - GET src/app/api/cart/route.ts — get user's cart items
+   - POST src/app/api/cart/route.ts — add item to cart
+   - PATCH src/app/api/cart/[cartItemId]/route.ts — update quantity
+   - DELETE src/app/api/cart/[cartItemId]/route.ts — remove item
+3. Update the navbar cart icon to show real cart count from the store
+4. Update "Add to Cart" buttons in product-card and product detail page to use the cart store
+```
+
+### Prompt 19 — Cart Page
+```
+Create a cart page at src/app/(store)/cart/page.tsx for my Next.js e-commerce project:
+
+1. List cart items with:
+   - Product image, name, price
+   - Quantity selector (+/- buttons)
+   - Item subtotal
+   - Remove button (trash icon)
+2. Group items by store name (so buyer can see which items come from which seller)
+3. Cart summary sidebar:
+   - Subtotal
+   - Shipping estimate (free over $50, otherwise $5.99)
+   - Total
+   - "Proceed to Checkout" button (redirect to /checkout, require login)
+4. Empty cart state with "Continue Shopping" button
+5. Make it responsive — summary goes below cart items on mobile
+```
+
+### Prompt 20 — Checkout & Stripe Payment
+```
+Set up Stripe payment for my Next.js e-commerce project:
+
+1. Install stripe and @stripe/stripe-js
+2. Create src/lib/stripe.ts — Stripe server instance
+3. src/app/(store)/checkout/page.tsx — Checkout page with:
+   - Shipping address form (use saved address if exists, or enter new)
+   - Order summary (list items, subtotal, shipping, total)
+   - "Pay with Stripe" button
+4. API routes:
+   - POST src/app/api/checkout/route.ts:
+     - Validate cart items and stock
+     - Create Stripe Checkout Session with line items
+     - Return session URL
+   - POST src/app/api/webhooks/stripe/route.ts:
+     - Handle checkout.session.completed event
+     - Create Order and OrderItems in database
+     - Reduce product stock
+     - Clear user's cart
+5. src/app/(store)/checkout/success/page.tsx — Order confirmation page
+6. src/app/(store)/checkout/cancel/page.tsx — Payment cancelled page
+7. Add STRIPE_SECRET_KEY, STRIPE_PUBLISHABLE_KEY, STRIPE_WEBHOOK_SECRET to .env.example
+```
+
+---
+
+## Phase 7: Buyer Order History
+
+### Prompt 21 — Buyer Orders
+```
+Create buyer order pages for my Next.js e-commerce project:
+
+1. src/app/(store)/orders/page.tsx — Order history:
+   - List of orders with order number, date, total, status badge (color coded), item count
+   - Click to view details
+2. src/app/(store)/orders/[orderId]/page.tsx — Order detail:
+   - Order status with a progress stepper (Pending → Processing → Shipped → Delivered)
+   - Items list with image, name, quantity, price
+   - Shipping address
+   - Payment info (total, shipping)
+3. API route: GET src/app/api/orders/route.ts — get logged-in user's orders
+4. API route: GET src/app/api/orders/[orderId]/route.ts — get specific order (only if it belongs to logged-in user)
+```
+
+---
+
+## Phase 8: Admin Features
+
+### Prompt 22 — Admin Seller Management
+```
+Create admin seller management for my Next.js e-commerce project:
+
+1. src/app/(dashboard)/admin/sellers/page.tsx — Sellers list:
+   - Table with store name, seller name, email, status (Pending/Approved/Rejected), date joined, actions
+   - Filter by status
+   - Approve and Reject buttons with confirmation modal
+2. src/app/(dashboard)/admin/sellers/[storeId]/page.tsx — Seller detail:
+   - Store info, seller info
+   - Products count, orders count, total revenue
+   - Approve/Reject buttons
+3. API routes:
+   - GET src/app/api/admin/stores/route.ts — get all stores
+   - PATCH src/app/api/admin/stores/[storeId]/route.ts — approve or reject store (update isApproved field)
+```
+
+### Prompt 23 — Admin Categories Management
+```
+Create admin categories management for my Next.js e-commerce project:
+
+1. src/app/(dashboard)/admin/categories/page.tsx — Categories page:
+   - Table with category name, slug, product count, image, actions
+   - Add category button → opens a modal with form (name, slug auto-generated from name, image URL)
+   - Edit button → same modal pre-filled
+   - Delete button with confirmation (only if no products in category)
+2. API routes:
+   - GET/POST src/app/api/admin/categories/route.ts
+   - PATCH/DELETE src/app/api/admin/categories/[categoryId]/route.ts
+3. Validate with Zod. Auto-generate slug from name (lowercase, replace spaces with hyphens).
+```
+
+### Prompt 24 — Admin Dashboard Overview
+```
+Create an admin dashboard overview page at src/app/(dashboard)/admin/page.tsx for my Next.js e-commerce project:
+
+1. Stats cards:
+   - Total Revenue (all orders)
+   - Total Orders
+   - Total Users
+   - Total Sellers
+   - Pending Seller Approvals
+   - Total Products
+2. Charts (use recharts):
+   - Line chart: Revenue over last 30 days
+   - Bar chart: Orders per day (last 7 days)
+   - Pie chart: Orders by status
+3. Recent orders table (last 10)
+4. Recent seller applications (last 5 pending stores)
+5. API route: GET src/app/api/admin/analytics/route.ts — return all analytics data
+```
+
+### Prompt 25 — Admin Orders & Users
+```
+Create admin orders and users management for my Next.js e-commerce project:
+
+1. src/app/(dashboard)/admin/orders/page.tsx — All orders:
+   - Table: order number, buyer name, seller store, total, status, date
+   - Filter by status
+   - Click to view order detail (reuse/adapt buyer order detail page)
+2. src/app/(dashboard)/admin/users/page.tsx — All users:
+   - Table: name, email, role, joined date, orders count
+   - Search by name/email
+   - Admin can change user role or deactivate account
+3. API routes:
+   - GET src/app/api/admin/orders/route.ts
+   - GET src/app/api/admin/users/route.ts
+   - PATCH src/app/api/admin/users/[userId]/route.ts
+```
+
+---
+
+## Phase 9: Image Upload & Polish
+
+### Prompt 26 — Image Upload with S3
+```
+Add AWS S3 image upload to my Next.js e-commerce project:
+
+1. Install @aws-sdk/client-s3 and @aws-sdk/s3-request-presigner
+2. Create src/lib/s3.ts — S3 client setup
+3. API route: POST src/app/api/upload/route.ts:
+   - Accept image file via FormData
+   - Validate file type (jpg, png, webp) and size (max 5MB)
+   - Upload to S3 bucket
+   - Return the image URL
+4. Create a reusable component src/components/image-upload.tsx:
+   - Drag and drop area or click to select
+   - Show upload progress
+   - Show preview after upload
+   - Return the URL to parent component
+5. Replace all URL text inputs for images (product images, store logo, category image) with this ImageUpload component
+6. Add AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_REGION, AWS_BUCKET_NAME to .env.example
+```
+
+### Prompt 27 — Loading States & Error Handling
+```
+Add proper loading states and error handling throughout my Next.js e-commerce project:
+
+1. Create a reusable loading spinner component at src/components/ui/spinner.tsx
+2. Create a reusable skeleton loader for:
+   - Product card (src/components/skeletons/product-card-skeleton.tsx)
+   - Table rows (src/components/skeletons/table-skeleton.tsx)
+3. Add loading.tsx files for major pages:
+   - src/app/(store)/loading.tsx
+   - src/app/(dashboard)/seller/products/loading.tsx
+   - src/app/(dashboard)/admin/loading.tsx
+4. Create a global error boundary at src/app/error.tsx and src/app/not-found.tsx with nice UI
+5. Add try-catch error handling to all API routes with consistent error response format: { error: string, status: number }
+6. Show toast notifications for all user actions (add to cart, create product, etc.)
+```
+
+---
+
+## Phase 10: Docker & Deployment
+
+### Prompt 28 — Docker Setup
+```
+Create Docker configuration for my Next.js e-commerce project:
+
+1. Dockerfile — multi-stage build for Next.js (base → deps → builder → runner)
+2. docker-compose.yml with:
+   - app (Next.js)
+   - db (PostgreSQL 15)
+   - Volumes for db data persistence
+   - Environment variables from .env
+3. .dockerignore file
+4. Add a "docker:up" and "docker:down" script to package.json
+5. Make sure Prisma migrations run automatically on container start
+```
+
+### Prompt 29 — CI/CD with GitHub Actions
+```
+Create a GitHub Actions CI/CD pipeline for my Next.js e-commerce project:
+
+1. .github/workflows/ci.yml:
+   - Trigger on push to main and pull requests
+   - Steps: checkout, setup Node 20, install deps, lint, type-check, run tests, build
+2. .github/workflows/deploy.yml:
+   - Trigger on push to main (after CI passes)
+   - Deploy to Vercel using Vercel CLI
+3. Add a Makefile with common commands: dev, build, test, lint, docker-up, docker-down, db-migrate, db-seed
+4. Update README.md with:
+   - Project description and screenshots placeholder
+   - Tech stack list
+   - Getting started instructions (local setup and Docker)
+   - Environment variables table
+   - API routes documentation
+   - Architecture overview
+```
+
+### Prompt 30 — Final Polish & SEO
+```
+Add final polish and SEO to my Next.js e-commerce project:
+
+1. Add metadata to all public pages (title, description, open graph) using Next.js generateMetadata
+2. Add a proper favicon and manifest.json
+3. Make sure all pages are fully responsive (test mobile, tablet, desktop)
+4. Add animations: subtle fade-in on page load for product grids, smooth hover effects on buttons and cards using Tailwind transitions
+5. Add an empty state component for: no products, no orders, empty cart, no reviews
+6. Add a .env.example file with ALL required environment variables with comments
+7. Do a final review of the project structure and make sure all imports are correct and there are no TypeScript errors
+```
+
+---
+
+## ✅ Quick Reference
+
+| Phase | Prompts | What You Build |
+|-------|---------|---------------|
+| Setup | 1-3 | Project + DB + Seed |
+| Auth | 4-6 | Login, Register, Middleware |
+| Layouts | 7-9 | Navbar, Seller & Admin Layouts |
+| Seller | 10-13 | Store, Products, Orders, Dashboard |
+| Buyer | 14-17 | Home, Product, Category, Search |
+| Cart | 18-20 | Cart, Checkout, Stripe |
+| Orders | 21 | Buyer Order History |
+| Admin | 22-25 | Sellers, Categories, Analytics, Users |
+| Polish | 26-27 | S3 Upload, Loading States |
+| Deploy | 28-30 | Docker, CI/CD, SEO |
+
+> **⚠️ Tips for using these prompts:**
+> - Always **test** after each prompt before moving to the next
+> - If something breaks, tell Sonnet: *"I got this error: [paste error]. Fix it."*
+> - After every 5 prompts, say: *"Review my current project for any bugs or missing imports and fix them."*
+> - Keep your `.env` file updated as new variables are added
